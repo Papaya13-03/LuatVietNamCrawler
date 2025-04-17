@@ -94,6 +94,8 @@ class Crawler:
 
     def process_qna(self, output_file="result.json"):
         for question in self.questions:
+            if question.id <= 1232:
+                continue
             print(f"Processing QnA ID: {question.id}")
             data = self.get_answer(question)
             self.write_to_file(data, output_file)
